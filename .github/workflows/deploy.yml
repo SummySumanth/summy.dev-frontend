@@ -3,9 +3,6 @@ name: 🚀 Deploy to Google Cloud App Engine
 on:
   release:
     types: [created]
-  branches:
-    only:
-      - master
 
 jobs:
     build:
