@@ -25,5 +25,9 @@ export default defineConfig({
     manifest: true,  // Generate manifest.json
     cssCodeSplit: true,  // Enable CSS code splitting
     sourcemap: true,  // Enable sourcemaps
-  }
+  },
+  preview: {
+    port: 7001,
+    host: true,
+  },
 })

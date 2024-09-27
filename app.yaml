@@ -15,6 +15,11 @@ handlers:
     secure: always
     redirect_http_response_code: 301
     login: required
+
+# Handle static assets like JS, CSS, images, etc.
+  - url: /assets/
+    static_dir: dist/assets
+
   - url: /.*
     static_files: dist/index.html
     upload: dist/index.html
