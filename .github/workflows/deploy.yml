@@ -1,7 +1,11 @@
 name: 🚀 Deploy to Google Cloud App Engine
 
 on:
-  push:
+  release:
+    types: [created]
+  branches:
+    only:
+      - master
 
 jobs:
     build:
