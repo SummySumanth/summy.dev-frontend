@@ -1,0 +1,35 @@
+name: 🚀 Deploy to Google Cloud App Engine
+
+on:
+  push:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: ⬇️ Checkout code 
+              uses: actions/checkout@v3
+
+            - name: 🛠️ Setup Node.js 
+              uses: actions/setup-node@v3
+              with:
+                node-version: '20'
+
+            - name: 📦 Install dependencies 
+              run: npm ci
+
+            - name: 🏗️ Build Project
+              run: npm run build
+
+            - name: 🌩️ Authenticate to Google Cloud
+              uses: google-github-actions/auth@v1
+              with:
+                credentials_json: ${{ secrets.GCP_CREDENTIALS_V2 }}
+
+            - name: 🛠️ Set up Google Cloud SDK
+              uses: google-github-actions/setup-gcloud@v1
+              with:
+                project_id: ${{ secrets.GCP_PROJECT_ID_V2 }}
+            
+            - name: 🚀 Deploy to Google Cloud App Engine
+              run: gcloud app deploy --quiet
