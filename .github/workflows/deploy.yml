@@ -25,12 +25,12 @@ jobs:
             - name: 🔐 Authenticate to Google Cloud
               uses: google-github-actions/auth@v1
               with:
-                credentials_json: ${{ secrets.GCP_CREDENTIALS_V2 }}
+                credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
             - name: 🛠️ Set up Google Cloud SDK
               uses: google-github-actions/setup-gcloud@v1
               with:
-                project_id: ${{ secrets.GCP_PROJECT_ID_V2 }}
+                project_id: ${{ secrets.GCP_PROJECT_ID }}
             
             - name: 🚀 Deploy to Google Cloud App Engine
               run: gcloud app deploy --quiet
