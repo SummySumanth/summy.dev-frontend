@@ -19,8 +19,8 @@ function ThemeSwitcher() {
     <div className={styles.mainContainer}>
     <label htmlFor="theme-checkbox" className={styles.container}>
       <input id="theme-checkbox" className={styles.checkbox} type="checkbox" onChange={toggleTheme} />  
-      <img className={classNames(styles.icons, sun)} alt="light mode" src={sun} />
-      <img className={classNames(styles.icons, moon)} src={moon} alt="dark mode" />
+      <img className={classNames(styles.icons, styles.sun)} alt="light mode" src={sun} />
+      <img className={classNames(styles.icons, styles.moon)} src={moon} alt="dark mode" />
     </label>
     </div>
   );

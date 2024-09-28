@@ -8,7 +8,7 @@ function SocialLinkChip({ social, onImageLoadCallback }) {
   return (
     <a key={siteName} className={styles.container} href={link} target="_blank" rel="noreferrer">
       <img
-        className={styles.icon}
+        className={styles.logo}
         src={icon}
         alt={siteName}
         onLoad={onImageLoadCallback}
