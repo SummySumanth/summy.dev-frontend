@@ -5,32 +5,34 @@ on:
     types: [created]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: ⬇️ Checkout code 
-              uses: actions/checkout@v3
+  deploy:
+    runs-on: ubuntu-latest
 
-            - name: 🛠️ Setup Node.js 
-              uses: actions/setup-node@v3
-              with:
-                node-version: '20'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-            - name: 📦 Install dependencies 
-              run: npm ci
+    - name: Install dependencies
+      run: npm install
 
-            - name: 🏗️ Build Project
-              run: npm run build
+    - name: Build Vite app
+      run: npm run build
 
-            - name: 🔐 Authenticate to Google Cloud
-              uses: google-github-actions/auth@v1
-              with:
-                credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+    - name: Sync S3 bucket
+      uses: jakejarvis/s3-sync-action@v0.5.1
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SOURCE_DIR: dist
 
-            - name: 🛠️ Set up Google Cloud SDK
-              uses: google-github-actions/setup-gcloud@v1
-              with:
-                project_id: ${{ secrets.GCP_PROJECT_ID }}
-            
-            - name: 🚀 Deploy to Google Cloud App Engine
-              run: gcloud app deploy --quiet
+    - name: Invalidate CloudFront Cache
+      uses: chetan/invalidate-cloudfront-action@v1.5
+      with:
+        distribution-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+        paths: '/*'
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

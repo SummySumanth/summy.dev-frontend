@@ -12,19 +12,24 @@ export default defineConfig({
     },
   },
   resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx'],  // Automatically resolve these extensions
+    extensions: ['.js', '.ts', '.jsx', '.tsx'],
   },
-  root: './app',  // Root directory
+  root: './app',
   build: {
     rollupOptions: {
-      input: './app/index.html',  // Entry point
+      input: './app/index.html',
+      output: {
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash][extname]',
+      },
     },
-    outDir: './../dist',  // Output directory
-    emptyOutDir: true,  // Empty output directory before building
-    assetsDir: './assets',  // Assets directory
-    manifest: true,  // Generate manifest.json
-    cssCodeSplit: true,  // Enable CSS code splitting
-    sourcemap: true,  // Enable sourcemaps
+    outDir: './../dist',
+    emptyOutDir: true,
+    assetsDir: './assets', // This ensures that all assets (JS, CSS, images) are placed in `dist/assets`
+    manifest: true,
+    cssCodeSplit: true,
+    sourcemap: true,
   },
   preview: {
     port: 7001,
