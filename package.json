@@ -2,8 +2,11 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
+  "engines": {
+  "node": "16.x"
+},
   "scripts": {
-    "start": "serve -s dist -l 5001",
+    "start": "serve -s dist -l 0.0.0.0:5001",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
