@@ -1,5 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import postcssCustomMedia from 'postcss-custom-media';
+import postcssGlobalData from '@csstools/postcss-global-data';
 
 export default defineConfig({
   plugins: [react()],
@@ -34,5 +36,18 @@ export default defineConfig({
   preview: {
     port: 7001,
     host: true,
+  },
+  css: {
+    postcss: {
+      plugins: [
+        postcssGlobalData({
+          files: ["./app/styles/resolutions.module.css"],
+        }),
+        postcssCustomMedia({
+          preserve: true,
+        }),
+      ],
+      
+    },
   },
 })
