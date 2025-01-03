@@ -39,7 +39,7 @@ const AnimatedRoutes = () => {
         eventName: EVENT_TYPES.DOWNLOAD,
         values: 'Resume',
       });
-      window.location.assign(`api.summy.dev/api/download/resume`);
+      window.open('https://api.summy.dev/api/download/resume', '_blank');
     }
   };
 
