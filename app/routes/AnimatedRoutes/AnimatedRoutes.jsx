@@ -6,6 +6,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { ENV } from '../../configs/configs';
 
 import { trackEvent, EVENT_TYPES } from '../../analytics/tracker';
 
@@ -29,12 +30,17 @@ const AnimatedRoutes = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
   const downloadResume = () => {
+    if(ENV === 'development') {
+      console.log('Download Resume DEV');
     window.location.assign(`${window.location.origin}/api/download/resume`);
-
-    trackEvent({
-      eventName: EVENT_TYPES.DOWNLOAD,
-      values: 'Resume',
-    });
+    } else if(ENV === 'production') {
+      console.log('Download Resume PROD');
+      trackEvent({
+        eventName: EVENT_TYPES.DOWNLOAD,
+        values: 'Resume',
+      });
+      window.location.assign(`api.summy.dev/api/download/resume`);
+    }
   };
 
   useEffect(() => {
