@@ -6,7 +6,7 @@
   "node": "16.x"
 },
   "scripts": {
-    "start": "serve -s dist -l 5001",
+    "start_prod_serving": "serve -s dist -l 5001",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
