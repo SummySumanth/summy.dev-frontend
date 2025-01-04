@@ -25,7 +25,7 @@ export default defineConfig({
         assetFileNames: 'assets/[name].[hash][extname]',
       },
     },
-    outDir: './../dist',
+    outDir: './dist',
     emptyOutDir: true,
     assetsDir: './assets', // This ensures that all assets (JS, CSS, images) are placed in `dist/assets`
     manifest: true,
