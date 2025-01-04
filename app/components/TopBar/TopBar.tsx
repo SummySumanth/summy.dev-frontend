@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Libs
 import { useState } from 'react';
 import classNames from 'classnames';
@@ -11,7 +13,32 @@ import { Download } from '../../images/svgComponents';
 // Styles
 import styles from './TopBar.module.css';
 
-const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
+interface TopBarProps {
+  changeRoute: (route: string) => void;
+  showNavbar: boolean;
+  downloadResume: () => void;
+  currentRoute: string;
+}
+
+/**
+ * TopBar component
+ *
+ * @param {function} changeRoute - function to change route
+ * @param {boolean} showNavbar - boolean to show navbar
+ * @param {function} downloadResume - function to download resume
+ * @param {string} currentRoute - current route
+ *
+ * @returns {ReactNode} TopBar component
+ *
+ * @example
+ * return <TopBar changeRoute={changeRoute} showNavbar={showNavbar} downloadResume={downloadResume} currentRoute={currentRoute} />
+ */
+const TopBar: React.FC<TopBarProps> = ({
+  changeRoute,
+  showNavbar,
+  downloadResume,
+  currentRoute,
+}) => {
   const [showNavItems, setShowNavItems] = useState(false);
   return (
     <div
@@ -28,7 +55,7 @@ const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
         <label
           htmlFor="toggle-navbar"
           className={styles.toggleLabel}
-          onClick={e => {
+          onClick={() => {
             setShowNavItems(!showNavItems);
           }}
         >
@@ -40,9 +67,9 @@ const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
           type="radio"
           name="nav-tabs"
           defaultChecked={currentRoute === '/' || currentRoute === '/bio'}
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
-            changeRoute(e.target.value);
+            changeRoute(e.currentTarget.value);
           }}
           value="bio"
           className={styles.linkBio}
@@ -52,9 +79,9 @@ const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
           type="radio"
           name="nav-tabs"
           defaultChecked={currentRoute === '/blogs'}
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
-            changeRoute(e.target.value);
+            changeRoute(e.currentTarget.value);
           }}
           value="blogs"
           className={styles.linkBlogs}
@@ -64,9 +91,9 @@ const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
           type="radio"
           name="nav-tabs"
           defaultChecked={currentRoute === '/projects'}
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
-            changeRoute(e.target.value);
+            changeRoute(e.currentTarget.value);
           }}
           value="projects"
           className={styles.linkProjects}
@@ -76,9 +103,9 @@ const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
           type="radio"
           name="nav-tabs"
           defaultChecked={currentRoute === '/certificates'}
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
-            changeRoute(e.target.value);
+            changeRoute(e.currentTarget.value);
           }}
           value="certificates"
           className={styles.linkCertificates}
@@ -88,9 +115,9 @@ const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
           type="radio"
           name="nav-tabs"
           defaultChecked={currentRoute === '/techstacks'}
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
-            changeRoute(e.target.value);
+            changeRoute(e.currentTarget.value);
           }}
           value="techstacks"
           className={styles.linkTechstack}
@@ -100,9 +127,9 @@ const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
           type="radio"
           name="nav-tabs"
           defaultChecked={currentRoute === '/uses'}
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
-            changeRoute(e.target.value);
+            changeRoute(e.currentTarget.value);
           }}
           value="uses"
           className={styles.linkUses}
@@ -112,9 +139,9 @@ const TopBar = ({ changeRoute, showNavbar, downloadResume, currentRoute }) => {
           type="radio"
           name="nav-tabs"
           defaultChecked={currentRoute === '/contact'}
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
-            changeRoute(e.target.value);
+            changeRoute(e.currentTarget.value);
           }}
           value="contact"
           className={styles.linkContact}
