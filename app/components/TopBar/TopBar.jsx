@@ -24,11 +24,11 @@ const TopBar = ({
           id="toggle-navbar"
           className={styles.navbarToggle}
           checked={showNavItems}
-          onChange={(e) => {
-            setShowNavItems(!showNavItems);
-          }}
         />
-        <label htmlFor="toggle-navbar" className={styles.toggleLabel}>
+        <label htmlFor="toggle-navbar" className={styles.toggleLabel}
+          onClick={(e) => {
+            setShowNavItems(!showNavItems);
+          }}>
           <div className={styles.barTop} />
           <div className={styles.barMiddle} />
           <div className={styles.barBottom} />
@@ -125,7 +125,7 @@ const TopBar = ({
           <label htmlFor="link-techstack" className={classNames(styles.navItems, styles.navItemTechstack)}>Tech</label>
           <label htmlFor="link-uses" className={classNames(styles.navItems, styles.navItemUses)}>Uses</label> */}
           <label htmlFor="link-contact" className={classNames(styles.navItems, styles.navItemContact)}>Contact</label>
-          <div className="slider" />
+          <div className={styles.slider} />
         </nav>
       </div>
 
