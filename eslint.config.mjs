@@ -43,6 +43,7 @@ export default [
     },
     rules: {
       ...react.configs.recommended.rules,
+      'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off', // React 17+ JSX transform
     },
     settings: {
