@@ -1,6 +1,13 @@
 {
   "liveServer.settings.port": 5501,
-  "cSpell.words": ["Bengaluru", "Sumanth", "Summy", "techstacks", "vcard"],
+  "cSpell.words": [
+    "Bengaluru",
+    "Sumanth",
+    "Summy",
+    "techstacks",
+    "vcard",
+    "VITE"
+  ],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#333333",
     "activityBar.background": "#333333",
@@ -30,5 +37,22 @@
       "name": "backend",
       "path": "./../backend"
     }
-  ]
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }
