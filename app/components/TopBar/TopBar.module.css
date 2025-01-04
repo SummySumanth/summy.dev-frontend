@@ -91,11 +91,13 @@ input[name='toggle-navbar']:checked ~ #navItems-container {
 
 .downloadText {
   margin-left: 12px;
+  display: flex;
 }
 
 .downloadicon {
   width: 24px;
   color: var(--color-label);
+  margin-right: 4px;
 }
 
 input[name='nav-tabs'] {
