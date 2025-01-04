@@ -10,13 +10,12 @@ export default defineConfig({
     strictPort: true,
     open: true,
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api': 'http://localhost:8080',
     },
   },
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx'],
   },
-  root: './app',
   build: {
     rollupOptions: {
       input: './app/index.html',

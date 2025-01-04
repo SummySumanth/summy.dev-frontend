@@ -5,6 +5,12 @@ import classNames from 'classnames';
 // Assets
 import { ringmeup } from '../../images';
 
+// Configs
+import { ENV, API_URL } from '../../configs/configs';
+
+// Tracker
+import { trackEvent, EVENT_TYPES } from '../../analytics/tracker';
+
 // Constants
 import socialLinks from '../../constants/socialLinks';
 
@@ -17,7 +23,13 @@ import styles from './Contact.module.css';
 
 const Contact = () => {
   const downloadVcard = () => {
-    window.location.assign(`${window.location.origin}/api/download/vcard`);
+    if (ENV === 'production') {
+      trackEvent({
+        eventName: EVENT_TYPES.DOWNLOAD,
+        values: 'VCard',
+      });
+    }
+    window.location.assign(`${API_URL}/api/download/vcard`);
   };
 
   let numberOfImages = 0;
@@ -52,7 +64,7 @@ const Contact = () => {
             [styles.popInAnimation]: showContentFlag,
           })}
           ctaText="Download VCard"
-          cta={() => downloadVcard}
+          cta={downloadVcard}
         />
         <div className={styles.imageContainer}>
           <img

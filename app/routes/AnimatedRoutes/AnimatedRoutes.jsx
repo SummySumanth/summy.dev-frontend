@@ -28,11 +28,9 @@ const AnimatedRoutes = () => {
     if (ENV === 'production') {
       trackEvent({
         eventName: EVENT_TYPES.DOWNLOAD,
-
         values: 'Resume',
       });
     }
-
     window.location.assign(`${API_URL}/api/download/resume`);
   };
 
