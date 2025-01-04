@@ -37,15 +37,4 @@
             "path": "./../backend",
         }
     ],
-    "eslint.workingDirectories": [
-        {
-            "directory": "../frontend",
-            "changeProcessCWD": true,
-            "overrideConfigFile": "./../frontend/eslint.config.js"
-        },
-        {
-            "directory": "../backend",
-            "changeProcessCWD": true,
-        }
-    ],
 }
