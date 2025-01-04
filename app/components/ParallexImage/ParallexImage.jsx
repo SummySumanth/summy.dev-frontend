@@ -24,7 +24,11 @@ const ParallexImage = ({ size }) => {
   }, [options]);
 
   return (
-    <div ref={tilt} className={styles.box} style={{ width: `${size}px`, height: `${size}px` }}>
+    <div
+      ref={tilt}
+      className={styles.box}
+      style={{ width: `${size}px`, height: `${size}px` }}
+    >
       <img className={styles.imgBx} src={bioBg} alt="bioBg" />
       <img className={styles.contentBx} src={bioFg} alt="bioFg" />
     </div>

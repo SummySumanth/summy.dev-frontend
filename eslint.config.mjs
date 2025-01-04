@@ -1,26 +1,64 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
+import globals from 'globals';
+import js from '@eslint/js';
+import tseslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import react from 'eslint-plugin-react';
+import prettierPlugin from 'eslint-plugin-prettier';
 
-
-/** @type {import('eslint').Linter.Config[]} */
+/** @type {import('eslint').FlatConfig[]} */
 export default [
-  {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  // Specify files
   {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    languageOptions: {
+      globals: globals.browser,
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+  },
+
+  // Base JS rules
+  js.configs.recommended,
+
+  // TypeScript rules
+  {
+    files: ['**/*.{ts,tsx}'],
+    plugins: {
+      '@typescript-eslint': tseslint,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
+    },
+  },
+
+  // React rules
+  {
+    files: ['**/*.{jsx,tsx}'],
+    plugins: {
+      react,
+    },
+    rules: {
+      ...react.configs.recommended.rules,
+      'react/react-in-jsx-scope': 'off', // React 17+ JSX transform
+    },
     settings: {
       react: {
-        version: "detect"
-      }
-    }
+        version: 'detect',
+      },
+    },
   },
+
+  // Prettier integration
   {
+    plugins: {
+      prettier: prettierPlugin,
+    },
     rules: {
-      "react/react-in-jsx-scope": "off"
-    }
-  }
+      'prettier/prettier': 'warn',
+    },
+  },
 ];

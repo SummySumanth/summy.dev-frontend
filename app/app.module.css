@@ -1,6 +1,6 @@
-@import "./styles/index.module.css";
+@import './styles/index.module.css';
 
-body{
+body {
   background: var(--color-system-background);
 }
 
@@ -12,8 +12,7 @@ body{
   top: 0;
 }
 
-
-canvas{
+canvas {
   border: 1px solid var(--color-system-background);
   background-color: var(--color-system-background);
 }
@@ -23,8 +22,8 @@ canvas{
 }
 
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 * {

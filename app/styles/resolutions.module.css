@@ -9,12 +9,16 @@
 @custom-media --screen-shorter (max-height: 570px);
 @custom-media --landscape (orientation: landscape);
 
-
 /*
 * This is used so that chrome would show breakdown of media queries in the dev tools
 */
-@media (--screen-tablet) {}
-@media (--screen-landscape) {}
-@media (--screen-mobile) {}
-@media (--screen-smaller) {}
-@media (--screen-shorter) {}
+@media (--screen-tablet) {
+}
+@media (--screen-landscape) {
+}
+@media (--screen-mobile) {
+}
+@media (--screen-smaller) {
+}
+@media (--screen-shorter) {
+}

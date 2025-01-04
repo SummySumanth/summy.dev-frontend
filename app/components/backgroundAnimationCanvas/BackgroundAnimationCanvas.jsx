@@ -10,7 +10,9 @@ const BackgroundAnimationCanvas = () => {
   }
 
   function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    const [windowDimensions, setWindowDimensions] = useState(
+      getWindowDimensions()
+    );
 
     useEffect(() => {
       function handleResize() {
@@ -30,12 +32,7 @@ const BackgroundAnimationCanvas = () => {
 
   const c = canvas.getContext('2d');
 
-  const color = [
-    '#343434',
-    '#6f6e6e',
-    '#767676',
-    '#5b5b5b',
-  ];
+  const color = ['#343434', '#6f6e6e', '#767676', '#5b5b5b'];
 
   const maxRadius = 5;
   const minRadius = 2;
@@ -44,7 +41,7 @@ const BackgroundAnimationCanvas = () => {
     y: undefined,
   };
 
-  window.addEventListener('mousemove', (event) => {
+  window.addEventListener('mousemove', event => {
     mouse.x = event.x;
     mouse.y = event.y;
   });
@@ -82,7 +79,13 @@ const BackgroundAnimationCanvas = () => {
       this.x += this.dx;
       this.y -= this.dy;
 
-      if (mouse.x - this.x < 50 && mouse.x - this.x > -50 && mouse.y - this.y < 50 && mouse.y - this.y > -50 && this.radius < maxRadius) {
+      if (
+        mouse.x - this.x < 50 &&
+        mouse.x - this.x > -50 &&
+        mouse.y - this.y < 50 &&
+        mouse.y - this.y > -50 &&
+        this.radius < maxRadius
+      ) {
         this.radius += 1;
       } else if (this.radius > minRadius) {
         this.radius -= 1;
@@ -115,7 +118,7 @@ const BackgroundAnimationCanvas = () => {
   animate();
   init();
 
-  return (<div />);
+  return <div />;
 };
 
 export default BackgroundAnimationCanvas;

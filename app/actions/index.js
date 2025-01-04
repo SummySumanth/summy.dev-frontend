@@ -6,11 +6,14 @@ if (typeof global === 'undefined') {
 }
 
 Object.defineProperty(window, 'localStorage', {
-  value: global.localStorage, configurable: true, enumerable: true, writable: true,
+  value: global.localStorage,
+  configurable: true,
+  enumerable: true,
+  writable: true,
 });
 const { localStorage } = window;
 
-export const setTheme = (theme) => {
+export const setTheme = theme => {
   const html = document.querySelector('html');
   html.dataset.theme = theme;
 

@@ -10,6 +10,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "format": "prettier --write .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -45,7 +46,7 @@
     "globals": "^15.14.0",
     "postcss": "^8.4.49",
     "postcss-custom-media": "^11.0.5",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.2",
     "redux-logger": "^3.0.6",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.19.0",

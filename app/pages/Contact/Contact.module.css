@@ -1,16 +1,16 @@
 .pageContainer {
-  width:100%;
+  width: 100%;
   height: 100%;
 }
 
 .header {
   color: var(--color-label);
   font-size: 28pt;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   position: absolute;
   top: 0;
   width: 100%;
-	padding: 16px 0px;
+  padding: 16px 0px;
   text-align: center;
   background: rgb(46 46 46 / 36%);
   backdrop-filter: blur(10px);
@@ -18,7 +18,7 @@
 
 .container {
   width: 100%;
-  height:100%;
+  height: 100%;
   overflow-y: scroll;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .popInAnimation {
-  animation: iconsPopIn 800ms ease-in-out 0ms 1  forwards;
+  animation: iconsPopIn 800ms ease-in-out 0ms 1 forwards;
 }
 
 @keyframes iconsPopIn {
@@ -59,21 +59,19 @@
   }
 }
 
-
-
 .tabletContainerPadded {
-    max-width: 1020px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .downloadBtn {
   margin: 0 auto;
 }
 
-  @media (--screen-tabletOrLower){
-    .tabletContainerPadded {
-        width: 90%;
-    }
+@media (--screen-tabletOrLower) {
+  .tabletContainerPadded {
+    width: 90%;
   }
+}

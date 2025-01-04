@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { ENV } from '../../configs/configs';
 
@@ -23,17 +18,17 @@ import Contact from '../../pages/Contact/Contact';
 const AnimatedRoutes = () => {
   const location = useLocation();
   const Navigate = useNavigate();
-  const changeRoute = (value) => {
+  const changeRoute = value => {
     Navigate(value);
   };
 
   const [showNavbar, setShowNavbar] = useState(false);
 
   const downloadResume = () => {
-    if(ENV === 'development') {
+    if (ENV === 'development') {
       console.log('Download Resume DEV');
-    window.location.assign(`${window.location.origin}/api/download/resume`);
-    } else if(ENV === 'production') {
+      window.location.assign(`${window.location.origin}/api/download/resume`);
+    } else if (ENV === 'production') {
       console.log('Download Resume PROD');
       trackEvent({
         eventName: EVENT_TYPES.DOWNLOAD,

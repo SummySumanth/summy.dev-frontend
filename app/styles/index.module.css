@@ -4,6 +4,6 @@
 @import './variables.module.css';
 
 * {
-    color: var(--color-label);
-    font-family: "Ubuntu", sans-serif;
-  }
+  color: var(--color-label);
+  font-family: 'Ubuntu', sans-serif;
+}

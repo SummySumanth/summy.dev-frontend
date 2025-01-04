@@ -4,18 +4,18 @@
 }
 
 .container {
-    cursor: pointer;
-  }
-  
-.icons {
-    position: absolute;
-    max-width: 28px;
-    right: 12px;
-    top: 6px;
+  cursor: pointer;
 }
-  
+
+.icons {
+  position: absolute;
+  max-width: 28px;
+  right: 12px;
+  top: 6px;
+}
+
 .checkbox {
-    display: none;
+  display: none;
 }
 
 .sun {
@@ -32,11 +32,11 @@
 }
 
 .moon {
-    transform: translateY(0px);
-    opacity: 1;
-    transition-property: transform, opacity;
-    transition-duration: var(--transition-time);
-    transition-timing-function: ease-in;
+  transform: translateY(0px);
+  opacity: 1;
+  transition-property: transform, opacity;
+  transition-duration: var(--transition-time);
+  transition-timing-function: ease-in;
 }
 
 .checkbox:checked ~ .moon {

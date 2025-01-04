@@ -29,15 +29,12 @@ import bioFg from './bio/fg.png';
 export {
   sun,
   moon,
-
   hello,
   fistBump,
   emoji,
-
   downloadDark,
   downloadLight,
   DownloadSvg,
-
   thumbsup,
   ringmeup,
   discord,
@@ -50,7 +47,6 @@ export {
   twitter,
   whatsapp,
   youtube,
-
   bioBg,
   bioBgLow,
   bioFg,

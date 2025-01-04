@@ -8,7 +8,10 @@ const EVENT_TYPES = {
 };
 
 const initializeMixpanel = () => {
-  mixpanel.init('3b1dd0f7b68e8f6e69482ed5962ab076', { track_pageview: true, persistence: 'localStorage' });
+  mixpanel.init('3b1dd0f7b68e8f6e69482ed5962ab076', {
+    track_pageview: true,
+    persistence: 'localStorage',
+  });
 };
 
 const trackEvent = ({ eventName, values }) => {
@@ -19,7 +22,7 @@ const trackEvent = ({ eventName, values }) => {
   });
 };
 
-const trackFileDownload = (fileName) => {
+const trackFileDownload = fileName => {
   trackEvent({
     eventName: EVENT_TYPES.DOWNLOAD,
     values: {

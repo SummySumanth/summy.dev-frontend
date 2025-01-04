@@ -11,11 +11,12 @@ function RoundedBtn(props) {
   const theme = window.localStorage.getItem('theme');
   const { ctaText, cta, className } = props;
   return (
-    <button type="button" className={ classNames(className, styles.container)} onClick={cta}>
-      
-      <div className={styles.text}>
-        {ctaText}
-      </div>
+    <button
+      type="button"
+      className={classNames(className, styles.container)}
+      onClick={cta}
+    >
+      <div className={styles.text}>{ctaText}</div>
     </button>
   );
 }

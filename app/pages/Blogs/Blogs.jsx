@@ -10,14 +10,13 @@ const Blogs = () => {
   useEffect(() => {
     setLoading(true);
     getBlogsList()
-      .then((response) => {
+      .then(response => {
         console.log('Blogs list is: ', response);
-        if(response && response.length > 0){
+        if (response && response.length > 0) {
           setBlogsList(response);
         }
-        
       })
-      .catch((error) => {
+      .catch(error => {
         console.log('Error in fetching blogs list: ', error);
       })
       .finally(() => {
@@ -26,17 +25,15 @@ const Blogs = () => {
   }, []);
   return (
     <div className={styles.pageContainer}>
-      {
-        blogsList.map((blog) => (
-          <BlogCard
-            key={blog.id}
-            categories={blog.category}
-            link={blog.link}
-            title={blog.title}
-            imageSrc={blog.imageSrc}
-          />
-        ))
-      }
+      {blogsList.map(blog => (
+        <BlogCard
+          key={blog.id}
+          categories={blog.category}
+          link={blog.link}
+          title={blog.title}
+          imageSrc={blog.imageSrc}
+        />
+      ))}
     </div>
   );
 };

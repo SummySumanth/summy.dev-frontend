@@ -34,24 +34,33 @@ const Contact = () => {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.container}>
-        <div className={classNames(styles.socialLinksContainer, {[styles.popInAnimation]: showContentFlag})}>
-          {
-                socialLinks.map((item) => (
-                  <SocialLinkChip
-                    key={item.link}
-                    onImageLoadCallback={incrementLoadedImages}
-                    social={item}
-                  />
-                ))
-              }
+        <div
+          className={classNames(styles.socialLinksContainer, {
+            [styles.popInAnimation]: showContentFlag,
+          })}
+        >
+          {socialLinks.map(item => (
+            <SocialLinkChip
+              key={item.link}
+              onImageLoadCallback={incrementLoadedImages}
+              social={item}
+            />
+          ))}
         </div>
         <RoundedBtn
-          className={classNames(styles.downloadBtn, {[styles.popInAnimation]: showContentFlag})}
+          className={classNames(styles.downloadBtn, {
+            [styles.popInAnimation]: showContentFlag,
+          })}
           ctaText="Download VCard"
           cta={() => downloadVcard}
         />
         <div className={styles.imageContainer}>
-          <img draggable={false} className={styles.avatarImg} src={ringmeup} alt="emoji" />
+          <img
+            draggable={false}
+            className={styles.avatarImg}
+            src={ringmeup}
+            alt="emoji"
+          />
         </div>
       </div>
     </div>

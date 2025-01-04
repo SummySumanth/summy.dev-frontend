@@ -12,13 +12,13 @@ import BackgroundAnimationCanvas from './components/backgroundAnimationCanvas/Ba
 
 import styles from './app.module.css';
 
-const loggerMiddleware = createLogger({ predicate: () => true, logger: console, diff: true });
+const loggerMiddleware = createLogger({
+  predicate: () => true,
+  logger: console,
+  diff: true,
+});
 
-const store = createStore(
-  allReducers,
-  applyMiddleware(loggerMiddleware),
-);
-
+const store = createStore(allReducers, applyMiddleware(loggerMiddleware));
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
@@ -29,10 +29,10 @@ if (rootElement) {
       <div className={styles.container}>
         <Routes />
       </div>
-    </Provider>,
+    </Provider>
   );
 } else {
-  console.error("Root element not found");
+  console.error('Root element not found');
 }
 
 if (ENV === 'production') {

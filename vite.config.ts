@@ -10,7 +10,7 @@ export default defineConfig({
     strictPort: true,
     open: true,
     proxy: {
-      '/api': 'http://localhost:3000',    
+      '/api': 'http://localhost:3000',
     },
   },
   resolve: {
@@ -41,13 +41,12 @@ export default defineConfig({
     postcss: {
       plugins: [
         postcssGlobalData({
-          files: ["./app/styles/resolutions.module.css"],
+          files: ['./app/styles/resolutions.module.css'],
         }),
         postcssCustomMedia({
           preserve: true,
         }),
       ],
-      
     },
   },
-})
+});

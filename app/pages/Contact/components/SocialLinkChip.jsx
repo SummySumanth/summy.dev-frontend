@@ -2,11 +2,15 @@ import React from 'react';
 import styles from './SocialLinkChip.module.css';
 
 function SocialLinkChip({ social, onImageLoadCallback }) {
-  const {
-    siteName, link, icon,
-  } = social;
+  const { siteName, link, icon } = social;
   return (
-    <a key={siteName} className={styles.container} href={link} target="_blank" rel="noreferrer">
+    <a
+      key={siteName}
+      className={styles.container}
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+    >
       <img
         className={styles.logo}
         src={icon}

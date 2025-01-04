@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import ThemeContext, { toggleTheme } from '../ThemeContext';
 import THEMES from '../utils/constants';
 
