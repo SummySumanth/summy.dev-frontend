@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getBlogsList } from '../../utils/apiCalls/blogs';
-import BlogCard from './components/BlogCard';
+import BlogCard from './components/BlogCard/BlogCard';
+import BlogCardShimmer from './components/BlogCardShimmer/BlogCardShimmer';
 
 import styles from './Blogs.module.css';
 
@@ -23,17 +24,25 @@ const Blogs = () => {
         setLoading(false);
       }, []);
   }, []);
+
+  // setInterval(() => {
+  //   setLoading(!loading);
+  // }, 3000);
+
   return (
     <div className={styles.pageContainer}>
-      {blogsList.map(blog => (
-        <BlogCard
-          key={blog.id}
-          categories={blog.category}
-          link={blog.link}
-          title={blog.title}
-          imageSrc={blog.imageSrc}
-        />
-      ))}
+      {loading && <BlogCardShimmer count={5} />}
+
+      {!loading &&
+        blogsList.map(blog => (
+          <BlogCard
+            key={blog.id}
+            categories={blog.category}
+            link={blog.link}
+            title={blog.title}
+            imageSrc={blog.imageSrc}
+          />
+        ))}
     </div>
   );
 };
