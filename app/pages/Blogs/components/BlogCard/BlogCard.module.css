@@ -79,15 +79,17 @@
   font-size: 1.3rem;
   background: var(--color-gray-6);
   border-radius: 4px;
+  padding: 20px;
 }
 
 .image {
-  padding: 20px 0 20px 20px;
-  max-width: 275px;
+  width: 255px;
+  /* height: 154px; */
   border-radius: 1px;
-  margin-right: 16px;
+  margin-right: 20px;
   border-radius: 4px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .categoriesContainer {
@@ -99,7 +101,7 @@
 .category {
   white-space: nowrap;
   background: var(--color-secondary-label);
-  margin: 4px 12px 6px 0;
+  margin: 4px 12px 0px 0;
   font-size: 1.1rem;
   color: var(--color-label-inverted);
   padding: 2px 4px;
@@ -107,7 +109,6 @@
 }
 
 .textContainer {
-  padding: 20px 20px 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

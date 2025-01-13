@@ -4,7 +4,7 @@ import { API_URL } from '../../configs/configs';
 
 const getBlogsList = () => {
   const url = `${API_URL}/api/blogs/getBlogsList`;
-  console.log('apir url is ', url);
+  // console.log('apir url is ', url);
   return axios
     .get(url, {
       headers: {
