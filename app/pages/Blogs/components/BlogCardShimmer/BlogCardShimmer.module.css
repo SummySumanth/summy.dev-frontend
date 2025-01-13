@@ -1,10 +1,9 @@
 .shimmer-card__image {
   position: relative;
-  margin: 20px 0 20px 20px;
   width: 255px;
   height: 154px;
   border-radius: 1px;
-  margin-right: 16px;
+  margin-right: 20px;
   border-radius: 4px;
   overflow: hidden;
   flex-shrink: 0;
@@ -28,7 +27,7 @@
   transform: rotate(45deg);
   /* left: -63px; */
   /* z-index: -1; */
-  animation: shimmer-animation-bar-move 2s linear 0s infinite forwards normal;
+  animation: shimmer-animation-bar-move 1s linear 0s infinite forwards normal;
 }
 
 @keyframes shimmer-animation-bar-move {
@@ -49,6 +48,7 @@
   background: var(--color-gray-6);
   border-radius: 4px;
   margin-bottom: 40px;
+  padding: 20px;
 }
 
 .shimmer-card__image--inner {
@@ -59,7 +59,6 @@
 }
 
 .textContainer {
-  padding: 20px 20px 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -75,7 +74,7 @@
 .category {
   white-space: nowrap;
   background: rgba(213, 213, 213, 0.428);
-  margin: 4px 12px 6px 0;
+  margin: 4px 12px 0 0;
   font-size: 1.1rem;
   /* color: var(--color-label-inverted); */
   padding: 2px 4px;

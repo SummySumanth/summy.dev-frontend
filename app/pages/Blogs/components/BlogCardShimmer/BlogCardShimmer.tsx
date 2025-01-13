@@ -17,7 +17,7 @@ const BlogCardShimmer: React.FC<BlogCardShimmerProps> = ({ count = 1 }) => {
   return (
     <>
       {Array.from({ length: count }).map((_, index) => (
-        <div key={index} className={styles['shimmer-card']}>
+        <div key={index + 'blogCardShimmer'} className={styles['shimmer-card']}>
           <div className={styles['shimmer-card__image']}>
             <div
               className={classNames(
