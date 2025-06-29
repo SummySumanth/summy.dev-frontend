@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  Navigate,
+} from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { ENV, API_URL } from '../../configs/configs';
 
@@ -15,11 +21,16 @@ import TechStack from '../../pages/TechStack/TechStack';
 import Uses from '../../pages/Uses/Uses';
 import Contact from '../../pages/Contact/Contact';
 
+// Separate component for redirect to avoid render-time navigation
+const BusinessCardRedirect = () => {
+  return <Navigate to="/contact" replace />;
+};
+
 const AnimatedRoutes = () => {
   const location = useLocation();
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const changeRoute = value => {
-    Navigate(value);
+    navigate(value);
   };
 
   const [showNavbar, setShowNavbar] = useState(false);
@@ -59,6 +70,7 @@ const AnimatedRoutes = () => {
         <Route path="techstacks" element={<TechStack />} />
         <Route path="uses" element={<Uses />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="business_card" element={<BusinessCardRedirect />} />
         <Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
       </Routes>
     </AnimatePresence>
