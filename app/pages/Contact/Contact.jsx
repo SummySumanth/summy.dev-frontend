@@ -59,13 +59,24 @@ const Contact = () => {
             />
           ))}
         </div>
-        <RoundedBtn
-          className={classNames(styles.downloadBtn, {
-            [styles.popInAnimation]: showContentFlag,
-          })}
-          ctaText="Download VCard"
-          cta={downloadVcard}
-        />
+        <div className={styles.buttonContainer}>
+          <RoundedBtn
+            className={classNames(styles.downloadBtn, {
+              [styles.popInAnimation]: showContentFlag,
+            })}
+            ctaText="Download VCard"
+            cta={downloadVcard}
+          />
+          <RoundedBtn
+            className={classNames(styles.downloadBtn, {
+              [styles.popInAnimation]: showContentFlag,
+            })}
+            ctaText="Go to Home Page"
+            cta={() => {
+              window.location.href = '/';
+            }}
+          />
+        </div>
         <div className={styles.imageContainer}>
           <img
             draggable={false}
