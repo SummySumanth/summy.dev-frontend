@@ -66,7 +66,7 @@ const TopBar: React.FC<TopBarProps> = ({
         <input
           type="radio"
           name="nav-tabs"
-          defaultChecked={currentRoute === '/' || currentRoute === '/bio'}
+          checked={currentRoute === '/' || currentRoute === '/bio'}
           onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
             changeRoute(e.currentTarget.value);
@@ -78,7 +78,7 @@ const TopBar: React.FC<TopBarProps> = ({
         <input
           type="radio"
           name="nav-tabs"
-          defaultChecked={currentRoute === '/blogs'}
+          checked={currentRoute === '/blogs'}
           onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
             changeRoute(e.currentTarget.value);
@@ -90,7 +90,7 @@ const TopBar: React.FC<TopBarProps> = ({
         <input
           type="radio"
           name="nav-tabs"
-          defaultChecked={currentRoute === '/projects'}
+          checked={currentRoute === '/projects'}
           onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
             changeRoute(e.currentTarget.value);
@@ -102,7 +102,7 @@ const TopBar: React.FC<TopBarProps> = ({
         <input
           type="radio"
           name="nav-tabs"
-          defaultChecked={currentRoute === '/certificates'}
+          checked={currentRoute === '/certificates'}
           onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
             changeRoute(e.currentTarget.value);
@@ -114,7 +114,7 @@ const TopBar: React.FC<TopBarProps> = ({
         <input
           type="radio"
           name="nav-tabs"
-          defaultChecked={currentRoute === '/techstacks'}
+          checked={currentRoute === '/techstacks'}
           onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
             changeRoute(e.currentTarget.value);
@@ -126,7 +126,7 @@ const TopBar: React.FC<TopBarProps> = ({
         <input
           type="radio"
           name="nav-tabs"
-          defaultChecked={currentRoute === '/uses'}
+          checked={currentRoute === '/uses'}
           onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
             changeRoute(e.currentTarget.value);
@@ -138,7 +138,7 @@ const TopBar: React.FC<TopBarProps> = ({
         <input
           type="radio"
           name="nav-tabs"
-          defaultChecked={currentRoute === '/contact'}
+          checked={currentRoute === '/contact'}
           onClick={(e: React.MouseEvent<HTMLInputElement>) => {
             setShowNavItems(false);
             changeRoute(e.currentTarget.value);
