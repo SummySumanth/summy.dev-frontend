@@ -85,4 +85,11 @@
   .tabletContainerPadded {
     width: 90%;
   }
+  .pageContainer {
+    padding: unset;
+  }
+  .buttonContainer {
+    flex-direction: column;
+    gap: 32px;
+  }
 }
