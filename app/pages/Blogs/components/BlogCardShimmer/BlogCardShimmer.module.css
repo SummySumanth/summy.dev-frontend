@@ -93,3 +93,24 @@
 .blogTitleShort {
   width: 60%;
 }
+
+@media (--screen-tabletOrLower) {
+  .shimmer-card {
+    flex-direction: column;
+  }
+  .shimmer-card__image {
+    width: 100%;
+    height: 100%;
+    margin: unset;
+    aspect-ratio: 1024 / 538;
+  }
+  .shimmer-card__image--inner {
+    aspect-ratio: 1024 / 538;
+  }
+  .textContainer {
+    margin-top: 12px;
+  }
+  .categoriesContainer {
+    margin-top: 0;
+  }
+}
