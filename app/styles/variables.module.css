@@ -40,6 +40,7 @@
   --dark-seperator: #98989b;
   --dark-opaque-saparator: #38383a;
   --dark-link: #0b84ff;
+  --dark-nav-items-container: rgba(0, 0, 0, 0.9);
 
   /* Light Theme */
   --light-blue: #007aff;
@@ -79,6 +80,9 @@
   --light-seperator: #c6c6c8;
   --light-opaque-saparator: #c5c5c8;
   --light-link: #007aff;
+  --light-nav-items-container: rgba(243, 243, 243, 0.9);
+  --nav-bar-hover-color: rgb(53 53 53 / 81%);
+  --nav-bar-checked-color: rgb(72 72 72 / 22%);
 
   /* animation speed */
   --animation-speed: 200ms;
@@ -133,6 +137,7 @@
   --color-seperator: var(--dark-seperator);
   --color-opaque-saparator: var(--dark-opaque-saparator);
   --color-link: var(--dark-link);
+  --nav-items-container: var(--dark-nav-items-container);
 }
 
 :root[data-theme='light'] {
@@ -179,6 +184,7 @@
   --color-seperator: var(--light-seperator);
   --color-opaque-saparator: var(--light-opaque-saparator);
   --color-link: var(--light-link);
+  --nav-items-container: var(--light-nav-items-container);
 }
 
 /* Container divs */
