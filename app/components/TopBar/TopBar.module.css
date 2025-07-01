@@ -91,6 +91,7 @@ input[name='toggle-navbar']:checked ~ #navItems-container {
 
 .downloadText {
   margin-left: 12px;
+  white-space: nowrap;
   display: flex;
 }
 

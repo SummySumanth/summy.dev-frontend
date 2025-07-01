@@ -93,3 +93,10 @@
     gap: 32px;
   }
 }
+
+@media screen and (max-height: 750px) {
+  /* Add responsive styles for short screens here */
+  .avatarImg {
+    width: 110px;
+  }
+}
