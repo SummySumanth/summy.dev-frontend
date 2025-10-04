@@ -27,7 +27,7 @@ export default [
   {
     siteName: 'Instagram',
     name: '@summy.dev_',
-    link: 'https://www.instagram.com/summy.dev_/',
+    link: 'https://www.instagram.com/summy.dev__',
     icon: instagram,
   },
   {
@@ -51,7 +51,7 @@ export default [
   {
     siteName: 'Youtube',
     name: '@SoberSummy',
-    link: 'https://www.youtube.com/@SoberSummy',
+    link: 'https://www.youtube.com/@Summy_dot_dev',
     icon: youtube,
   },
   {
